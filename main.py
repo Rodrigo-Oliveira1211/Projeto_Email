@@ -1,5 +1,10 @@
-import pandas as pd
+from enviar_arquivo import EmailBot
 
 
+if __name__ == "__main__":
 
-tabela = pd.read_excel("Planilhateste.xlsx")
+    login = open("Arquivos/login.txt", "r").readlines()
+    email = login[0]
+    senha = login[1]
+    enviar = EmailBot(email, senha)
+    enviar.enviar_email()
